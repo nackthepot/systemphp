@@ -18,7 +18,7 @@ th {
   border: 1px solid black;
 }
 td {
-  width: 50%;
+  width: 300px;
   border: 1px solid black;
   height: 40px;
 }

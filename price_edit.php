@@ -10,14 +10,18 @@
 <?php include("php/menu.php") ?><br>
 <h1>แก้ไขราคา</h1>
 <form action="" method="POST">
-        <input type="text" name="sku" placeholder="sku">
-        <input type="text" name="price_buy" placeholder="ค่าเข้า">
-        <input type="text" name="price_sell" placeholder="ราคาขาย">
-        <input type="text" name="price_net" placeholder="ราคาเน็ต">
+        <?php 
+        $sku = $_GET['sku'];
+        $price_sell = $_GET['price_sell'];
+        $price_net = $_GET['price_net'];
+        echo $sku;
+        ?>
+        <input type="text" name="new_price_sell" value="<?php echo $price_sell ?>">
+        <input type="text" name="new_price_net" value="<?php echo $price_net ?>">
         <input type="submit" value="OK">
     </form>
     <?php
-        include("php/add_price.php")
+        include("php/action_edit_price.php")
     ?>
 
 </body>
