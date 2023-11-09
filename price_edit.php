@@ -18,7 +18,7 @@
         ?>
         <input type="text" name="new_price_sell" value="<?php echo $price_sell ?>">
         <input type="text" name="new_price_net" value="<?php echo $price_net ?>">
-        <input type="submit" value="OK">
+        <input type="submit" value="OK"  onclick="return confirm('คุณต้องกาแก้ไขข้อมูลนี้ใช่หรือไม่');">
     </form>
     <?php
         include("php/action_edit_price.php")

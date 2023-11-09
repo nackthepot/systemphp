@@ -20,7 +20,7 @@
         ?>
         <input type="text" name="new_sku" value="<?php echo $sku ?>">
         <input type="text" name="new_name"  value="<?php echo $name_nb ?>">
-        <input type="submit" value="OK">
+        <input type="submit" value="OK"  onclick="return confirm('คุณต้องการแก้ไขข้อมูลนี้ใช่หรือไม่');">
     </form>
     <?php
         include("php/action_edit_product.php")
