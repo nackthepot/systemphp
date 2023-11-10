@@ -15,6 +15,7 @@
         <input type="text" name="sku" placeholder="sku">
         <input type="text" name="name" placeholder="name">
         <input type="text" name="stock_id" placeholder="stock">
+        <input type="text" name="price_buy" placeholder="price_buy">
         <input type="submit" value="OK">
     </form>
     <?php
