@@ -48,9 +48,11 @@ tr {
 <body>
 <?php include("php/menu.php") ?><br>
     <h1>หน้าหลัก</h1>
+    
     <div class="wrapper">
 <table class="table">
     <thead>
+        <td>รายการ Notebook</td>
         <tr>
             <th>รหัสสินค้า</th>
             <th>ชื่อสินค้า</th>
@@ -61,6 +63,23 @@ tr {
     </thead>
     <?php
         include("php/home_preview.php")
+    ?>
+    
+        <div class="wrapper">
+        <table class="table">
+             <thead>
+             <td>รายการ อุปกรณ์</td>
+        <tr>
+            <th>รหัสสินค้า</th>
+            <th>ชื่อสินค้า</th>
+            <th>หมวดหมู่</th>
+            <th>ราคาขาย</th>
+            <th>ราคา Net</th>
+            <th>ACTION</th>
+        </tr>
+    </thead>
+    <?php
+        include("php/frist_preview.php")
     ?>
     
 </body>
