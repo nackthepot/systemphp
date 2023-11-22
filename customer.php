@@ -77,7 +77,7 @@ tr {
             <td>$row[address]</td>
             <td>$row[phone]</td>
             <td>
-                <a class='btn btn1' href='new.php?customer_id=$row[customer_id]&name=$row[name]'>เลือก</a>
+                <a class='btn btn1' href='new2.php?customer_id=$row[customer_id]'>เลือก</a>
 
             </td>
         </tr>
