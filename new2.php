@@ -1,13 +1,16 @@
 <?php
     include("php/connectdb.php")
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
   <title>สร้างบิล</title>
 </head>
 <body>
+<?php include("php/menu.php") ?><br>
   <h1>สร้างบิล</h1>
 
   <form action="new.php" method="post">
@@ -18,14 +21,14 @@ $customer_id = isset($_GET['customer_id']) ? $_GET['customer_id'] : "ไม่�
 // ตรวจสอบว่ามีค่าหรือไม่
 if ($customer_id) {
   // มีค่า ให้ echo 55
-  $query = "SELECT * FROM customer WHERE customer_id = '$customer_id'";
+  $query = "SELECT * FROM customers WHERE customer_id = '$customer_id'";
   $result = mysqli_query($conn, $query);
   if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_array($result)) {
       //echo $row['name'] . " " . $row['address']. " " . $row['phone'];
-      $name = $row['name'];
-      $address = $row['address'];
-      $phone = $row['phone'];
+      $name = $row['customer_name'];
+      $address = $row['customer_address'];
+      $phone = $row['customer_phone'];
     }
 } else {
   // ไม่มีค่า ให้ echo ค่าเริ่มต้น
@@ -38,8 +41,10 @@ if ($customer_id) {
     <input type="text" name="customer_name" value="<?php  if(isset($name)){echo $name; } else{echo"This variable is NOT empty";} ?>">
     <input type="text" name="address" value="<?php  if(isset($address)){echo $address; } else{echo"This variable is NOT empty";} ?>">
     <input type="text" name="phone" value="<?php  if(isset($phone)){echo $phone; } else{echo"This variable is NOT empty";} ?>"><br>
-    <a class='btn btn1' href='add_customer.php'>เพิ่มผู้ใช้งาน</a>
-    <a class='btn btn1' href='customer.php'>ค้นหา</a>
+    <br>
+    <a class='btn1' href='add_customer.php'>เพิ่มผู้ใช้งาน</a>
+    <a class='btn2' href='customer.php'>ค้นหา</a>
+    <br>
     <br>
     <input type="date" name="date_of_issue" placeholder="วันที่ออกบิล">
 

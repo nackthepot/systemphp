@@ -52,19 +52,20 @@ tr {
     <div class="wrapper">
 <table class="table">
     <thead>
-        <td>รายการ Notebook</td>
+        <td>รายการลูกค้า</td>
         <tr>
             <th>รหัสลูกค้า</th>
             <th>ชื่อ</th>
             <th>ที่อยู่</th>
-            <th>เบอร์ติดต่อ/th>
+            <th>จังหวัด</th>
+            <th>เบอร์ติดต่อ</th>
             <th>ACTION</th>
         </tr>
     </thead>
     
         <?php
         $sql = "SELECT *
-                FROM customer
+                FROM customers
                 ";
         $result = mysqli_query($conn,$sql);
 
@@ -73,9 +74,10 @@ tr {
             <tr>
        
             <td>$row[customer_id]</td>
-            <td>$row[name]</td>
-            <td>$row[address]</td>
-            <td>$row[phone]</td>
+            <td>$row[customer_name]</td>
+            <td>$row[customer_address]</td>
+            <td>$row[customer_town]</td>
+            <td>$row[customer_phone]</td>
             <td>
                 <a class='btn btn1' href='new2.php?customer_id=$row[customer_id]'>เลือก</a>
 

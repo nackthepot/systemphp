@@ -81,6 +81,10 @@ tr {
     <?php
         include("php/frist_preview.php")
     ?>
+  
+
+   
+
     
 </body>
 </html>
