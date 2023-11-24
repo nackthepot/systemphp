@@ -79,15 +79,15 @@
 <body>
 </div>
 <div class="navbar">
-<a href="/php/index.php">home</a>
+<a href="/index.php">home</a>
   <div class="dropdown">
     <button class="dropbtn">เพิ่มสินค้า
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-    <a href="/php/add/add_notebook.php">เพิ่ม Notebook</a>
-    <a href="/php/add/add_monitor.php">เพิ่ม Monitor</a>
-    <a href="/php/add/add.php">เพิ่ม อุปกรณ์ทั่วไป</a>
+    <a href="/add/add_notebook.php">เพิ่ม Notebook</a>
+    <a href="/add/add_monitor.php">เพิ่ม Monitor</a>
+    <a href="/add/add.php">เพิ่ม อุปกรณ์ทั่วไป</a>
     </div>
   </div>
   <div class="dropdown">
@@ -95,10 +95,10 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-    <a href="/php/add/add_customer.php">เพิ่มข้อมูลลูกค้า</a>
-    <a href="/php/add/add_dealer.php">เพิ่มข้อมูลที่มา</a>
-    <a href="/php/add/add_category.php">เพิ่มหมวดหมู่</a>
-    <a href="/php/add/add_warranty_com.php">เพิ่มผู้รับประกัน</a>
+    <a href="/add/add_customer.php">เพิ่มข้อมูลลูกค้า</a>
+    <a href="/add/add_dealer.php">เพิ่มข้อมูลที่มา</a>
+    <a href="/add/add_category.php">เพิ่มหมวดหมู่</a>
+    <a href="/add/add_warranty_com.php">เพิ่มผู้รับประกัน</a>
     </div>
   </div>
   <div class="dropdown">
@@ -106,10 +106,10 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-    <a href="/php/doc/bill.php">เปิดบิล</a>
-    <a href="/php/doc/pickup.php">ใบเบิกของ</a>
-    <a href="/php/doc/reture.php">ใบคืนของ</a>
-    <a href="/php/doc/po.php">ใบ po</a>
+    <a href="/doc/bill.php">เปิดบิล</a>
+    <a href="/doc/pickup.php">ใบเบิกของ</a>
+    <a href="/doc/reture.php">ใบคืนของ</a>
+    <a href="/doc/po.php">ใบ po</a>
     </div>
   </div>
   <div class="dropdown">
@@ -117,9 +117,9 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-    <a href="/php/result/products.php">ข้อมูลสินค้า</a>
-    <a href="/php/result/customer.php">ข้อมูลลูกค้า</a>
-    <a href="/php/result/stockplace.php">ข้อมูลที่จัดเก็บ</a>
+    <a href="/result/products.php">ข้อมูลสินค้า</a>
+    <a href="/result/customer.php">ข้อมูลลูกค้า</a>
+    <a href="/result/stockplace.php">ข้อมูลที่จัดเก็บ</a>
     </div>
   </div>
   <div class="dropdown">
@@ -127,14 +127,14 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-    <a href="/php/edit_.php">แก้ชื่อสินค้า</a>
-    <a href="/php/edit_notebook.php">แก้สเปค Notebook</a>
-    <a href="/php/edit_monitor.php">แก้สเปค Monitor</a>
-    <a href="/php/edit_product_price.php">แก้ราคาสินค้า</a>
-    <a href="/php/edit_customer.php">แก้ข้อมูลลูกค้า</a>
-    <a href="/php/edit_dealer.php">แก้ข้อมูลที่มา
-    <a href="/php/edit_warranty_com.php">แก้ข้อมูลผู้รับประกัน</a>
-    <a href="/php/del/delete.php">ลบสินค้า</a>
+    <a href="/edit_.php">แก้ชื่อสินค้า</a>
+    <a href="/edit_notebook.php">แก้สเปค Notebook</a>
+    <a href="/edit_monitor.php">แก้สเปค Monitor</a>
+    <a href="/edit_product_price.php">แก้ราคาสินค้า</a>
+    <a href="/edit_customer.php">แก้ข้อมูลลูกค้า</a>
+    <a href="/edit_dealer.php">แก้ข้อมูลที่มา
+    <a href="/edit_warranty_com.php">แก้ข้อมูลผู้รับประกัน</a>
+    <a href="/del/delete.php">ลบสินค้า</a>
     </a>
     </div>
   </div>
