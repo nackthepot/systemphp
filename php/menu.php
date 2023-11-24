@@ -79,16 +79,63 @@
 <body>
 </div>
 <div class="navbar">
-<a href="home.php">home</a>
-<a href="new2.php">เปิดบิล</a>
+<a href="http://localhost/php/index.php">home</a>
   <div class="dropdown">
     <button class="dropbtn">เพิ่มสินค้า
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-    <a href="add_product_price.php">เพิ่มราคา</a>
-    <a href="multi_add.php">เพิ่มสินค้าหลายรายการ</a>
-    <a href="add.php">แอดสินค้า</a>
+    <a href="http://localhost/php/add/add_notebook.php">เพิ่ม Notebook</a>
+    <a href="http://localhost/php/add/add_monitor.php">เพิ่ม Monitor</a>
+    <a href="http://localhost/php/add/add.php">เพิ่ม อุปกรณ์ทั่วไป</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">เพิ่มข้อมูล
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+    <a href="http://localhost/php/add/add_customer.php">เพิ่มข้อมูลลูกค้า</a>
+    <a href="http://localhost/php/add/add_dealer.php">เพิ่มข้อมูลที่มา</a>
+    <a href="http://localhost/php/add/add_category.php">เพิ่มหมวดหมู่</a>
+    <a href="http://localhost/php/add/add_warranty_com.php">เพิ่มผู้รับประกัน</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">ใบเบิก-คืนสินค้า
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+    <a href="http://localhost/php/doc/bill.php">เปิดบิล</a>
+    <a href="http://localhost/php/doc/pickup.php">ใบเบิกของ</a>
+    <a href="http://localhost/php/doc/reture.php">ใบคืนของ</a>
+    <a href="http://localhost/php/doc/po.php">ใบ po</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">ดูข้อมูล
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+    <a href="http://localhost/php/result/products.php">ข้อมูลสินค้า</a>
+    <a href="http://localhost/php/result/customer.php">ข้อมูลลูกค้า</a>
+    <a href="http://localhost/php/result/stockplace.php">ข้อมูลที่จัดเก็บ</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">แก้ไขข้อมูล
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+    <a href="http://localhost/php/edit_.php">แก้ชื่อสินค้า</a>
+    <a href="http://localhost/php/edit_notebook.php">แก้สเปค Notebook</a>
+    <a href="http://localhost/php/edit_monitor.php">แก้สเปค Monitor</a>
+    <a href="http://localhost/php/edit_product_price.php">แก้ราคาสินค้า</a>
+    <a href="http://localhost/php/edit_customer.php">แก้ข้อมูลลูกค้า</a>
+    <a href="http://localhost/php/edit_dealer.php">แก้ข้อมูลที่มา
+    <a href="http://localhost/php/edit_warranty_com.php">แก้ข้อมูลผู้รับประกัน</a>
+    <a href="http://localhost/php/del/delete.php">ลบสินค้า</a>
+    </a>
     </div>
   </div>
 </div>

@@ -1,111 +1,90 @@
+<?php
+    include("php/connectdb.php")
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Invoice Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+table {
+  border: 1px solid black;
+}
+th {
+  color: white;
+  padding: 20px;
+  background-color: blue;
+  border: 1px solid black;
+}
+td {
+  width: 300px;
+  border: 1px solid black;
+  height: 40px;
+}
+tr {
+    
+}
+
+.btn{
+    background-color: red;
+    padding: 2px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color : white;
+}
+
+.btn1{
+    background-color: green;
+    margin-left: 10px;
+}
+
+.btn2{
+    background-color: red;
+}
+</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php include("php/menu.php") ?><br>
+    <h1>หน้าหลัก</h1>
+    
+    <div class="wrapper">
+<table class="table">
+    <thead>
+        <td>รายการ Notebook</td>
+        <tr>
+            <th>รหัสสินค้า</th>
+            <th>ชื่อสินค้า</th>
+            <th>ราคาขาย</th>
+            <th>ราคา Net</th>
+            <th>ACTION</th>
+        </tr>
+    </thead>
+    <?php
+        include("php/home_preview.php")
+    ?>
+    
+        <div class="wrapper">
+        <table class="table">
+             <thead>
+             <td>รายการ อุปกรณ์</td>
+        <tr>
+            <th>รหัสสินค้า</th>
+            <th>ชื่อสินค้า</th>
+            <th>หมวดหมู่</th>
+            <th>ราคาขาย</th>
+            <th>ราคา Net</th>
+            <th>ACTION</th>
+        </tr>
+    </thead>
+    <?php
+        include("php/frist_preview.php")
+    ?>
+  
 
-  <h1>ใบกำกับภาษี</h1>
+   
 
-  <form action="" method="post">
-    <label for="name">ชื่อลูกค้า</label>
-    <input type="text" name="name" id="name">
-    <input type="text" name="sku" id="sku">
-    <input type="submit" value="click">
-
-    <label for="date">วันที่</label>
-    <input type="date" name="date" id="date">
-
-    <label for="product">สินค้า</label>
-    <select name="product" id="product">
-      <option value="">เลือกสินค้า</option>
-      <?php
-        $sku = $_POST['sku'];
-        
-        // แสดงรายการสินค้าจาก MySQL
-        $connection = new mysqli("localhost", "root", "", "test");
-        $query = "SELECT * FROM products WHERE sku = '$sku'";
-        $result = $connection->query($query);
-
-        while ($row = $result->fetch_assoc()) {
-          echo "<option value=\"{$row['id']}\">{$row['name']} ({$row['sku']} บาท)</option>";
-        }
-
-        $connection->close();
-      ?>
-    </select>
-
-    <label for="quantity">จำนวน</label>
-    <input type="number" name="quantity" id="quantity" min="1">
-
-    <button type="submit">สร้างใบกำกับภาษี</button>
-  </form>
-
-  <?php
-
-    // ตรวจสอบว่ามีการกดปุ่มสร้างใบกำกับภาษีหรือไม่
-    if (isset($_POST['submit'])) {
-
-      // ดึงข้อมูลจากฟอร์ม
-      $name = $_POST['name'];
-      $date = $_POST['date'];
-      $productId = $_POST['product'];
-      $quantity = $_POST['quantity'];
-
-      // เชื่อมต่อกับ MySQL
-      $connection = new mysqli("localhost", "root", "", "test");
-
-      // ดึงข้อมูลสินค้า
-      $query = "SELECT * FROM products WHERE id = $productId";
-      $result = $connection->query($query);
-
-      // ตรวจสอบว่าสินค้ามีอยู่หรือไม่
-      if ($result->num_rows > 0) {
-
-        // ดึงข้อมูลสินค้า
-        $row = $result->fetch_assoc();
-
-        // คำนวณราคารวม
-        $total = $row['sku'] * $quantity;
-
-        // แสดงใบกำกับภาษี
-        echo "<h2>ใบกำกับภาษี</h2>";
-        echo "<table>";
-        echo "<tr>";
-        echo "<th>ชื่อลูกค้า</th>";
-        echo "<td>$name</td>";
-        echo "</tr>";
-        echo "<tr>";
-        echo "<th>วันที่</th>";
-        echo "<td>$date</td>";
-        echo "</tr>";
-        echo "<tr>";
-        echo "<th>สินค้า</th>";
-        echo "<td>$row[name]</td>";
-        echo "</tr>";
-        echo "<tr>";
-        echo "<th>จำนวน</th>";
-        echo "<td>$quantity</td>";
-        echo "</tr>";
-        echo "<tr>";
-        echo "<th>ราคา</th>";
-        echo "<td>" . number_format($row['sku'], 2) . " บาท</td>";
-        echo "</tr>";
-        echo "<tr>";
-        echo "<th>ราคารวม</th>";
-        echo "<td>" . number_format($total, 2) . " บาท</td>";
-        echo "</tr>";
-        echo "</table>";
-
-      } else {
-        echo "สินค้านี้ไม่มีอยู่";
-      }
-
-      $connection->close();
-    }
-
-  ?>
-
+    
 </body>
 </html>
