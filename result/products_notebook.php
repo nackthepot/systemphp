@@ -15,6 +15,7 @@
                 <tr>
                     <th>รหัสสินค้า</th>
                     <th>ชื่อสินค้า</th>
+                    <th>รุ่นสินค้า</th>
                     <th>สเปคเครื่อง</th>
                     <th>ราคาเข้า</th>
                     <th>ราคาขาย</th>
@@ -66,6 +67,8 @@
             <tr>
             <td>$row[sku] </td>
             <td>$row[brand] $row[model] </td>
+            <td>$row[brand] </td>
+            <td>$row[model]</td>
             <td width='300px'>CPU : $row[cpu] <br>
             RAM : $row[ram] <br>
             SSD1 : $row[ssd1] <br>
@@ -92,6 +95,12 @@
                 <a class='button button1' href='/edit/edit_warranty_com.php?sku=$row[sku]'>แก้ไขผู้รับประกัน</a>
                 <a class='button button1' href='/edit/edit_dealer.php?sku=$row[sku]'>แก้ไขที่มา</a>
                 <a class='button button3' href='delete.php?sku=$row[sku]'>ลบสินค้า</a>
+                <a class='button button1' href='/edit/edit_products.php?id=$row[sku]'>แก้ไขข้อมูลสินค้า</a><br>
+                <a class='button button1' href='/edit/edit_notebook.php?id=$row[sku]'>แก้ไขสเปค Notebook</a><br>
+                <a class='button button1' href='/edit/edit_product_price.php?id=$row[sku]'>แก้ไขราคา</a><br>
+                <a class='button button1' href='/edit/edit_warranty_com.php?id=$row[sku]'>แก้ไขผู้รับประกัน</a><br>
+                <a class='button button1' href='/edit/edit_dealer.php?id=$row[sku]'>แก้ไขที่มา</a><br>
+                <a class='button button3' href='delete.php?id=$row[sku]'>ลบสินค้า</a><br>
             </td>
         </tr>
         ";

@@ -9,6 +9,7 @@
     <?php include("../php/connectdb.php") ?>
     <?php include("../php/menu.php") ?>
     <h1> แก้ไขข้อมูลสินค้า </h1>
+
     <form action="" method="POST">
         <?php 
         $sku = $_GET['sku'];
@@ -63,3 +64,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
             mysqli_close($conn);
             ?>
+
+    
+</body>
+</html>
+

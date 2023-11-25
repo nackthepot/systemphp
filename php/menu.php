@@ -159,6 +159,7 @@
         text-align: left;
       }
 
+
       td{
         font-size: 12px;
       }
@@ -214,6 +215,7 @@
         width: 50%;
         padding-left: 20px;
       }
+
         </style>
 
 </head>
