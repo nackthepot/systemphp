@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php include("php/connectdb.php")?>
-    <?php include("php/menu.php")?>
-    <br>
+    
 <form action="" method="POST">
     <input type="text" name="name">
     <input type="text" name="cpu">

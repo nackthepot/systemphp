@@ -5,97 +5,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
     <?php include("../php/connectdb.php") ?>
     <?php include("../php/menu.php") ?>
     <h1> เพิ่ม Notebook </h1>
-    <form action="" method="POST">
-        <label>รหัส SKU : </label>
-        <input type="text" name="sku" placeholder="SKU"><br>
-        <label>ชื่อแบรนด์สินค้า : </label>
-        <input type="text" name="brand" placeholder="brand"><br>
-        <label>ชื่อรุ่นสินค้า </label>
-        <input type="text" name="model" placeholder="ชื่อรุ่น"><br>
-        <label>รหัส Serial Number </label>
-        <input type="text" name="serial" placeholder="Serial Number"><br>
-        <label>วันที่รับเข้า </label>
-        <input type="date" name="date"><br>
-        <label>ผู้รับประกัน </label>
-        <select name="warranty_com_id"><br>
-            <?php
-            $sql = "SELECT * FROM warranty_com";
-            $result = mysqli_query($conn, $sql);
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<option value='{$row['warranty_com_id']}'>{$row['warranty_com_name']}</option>";
-            }
-            ?>
+    <div class="add_main">
+        <div class="left-col">
+            <form action="" method="POST">
+                <label>รหัส SKU : </label>
+                <input type="text" name="sku" placeholder="SKU"><br>
+                <label>ชื่อแบรนด์สินค้า : </label>
+                <input type="text" name="brand" placeholder="brand"><br>
+                <label>ชื่อรุ่นสินค้า </label>
+                <input type="text" name="model" placeholder="ชื่อรุ่น"><br>
+                <label>รหัส Serial Number </label>
+                <input type="text" name="serial" placeholder="Serial Number"><br>
+                <label>วันที่รับเข้า </label>
+                <input type="date" name="date"><br>
+                <label>ผู้รับประกัน </label>
+                <select name="warranty_com_id"><br>
+                    <?php
+                    $sql = "SELECT * FROM warranty_com";
+                    $result = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option value='{$row['warranty_com_id']}'>{$row['warranty_com_name']}</option>";
+                    }
+                    ?>
+                </select>
+                <br>
+                <label>วันหมดประกัน</label>
+                <input type="date" name="warranty"><br>
+                <label>แหล่งที่มา </label>
+                <select name="dealer_id"><br>
+                    <?php
+                    $sql = "SELECT * FROM dealer";
+                    $result = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option value='{$row['dealer_id']}'>{$row['dealer_name']}</option>";
+                    }
+                    ?>
+                </select>
+                <label>ราคารับเข้า</label>
+                <input type="text" name="price_buy" placeholder="ราคารับเข้า"><br>
+                <label>ราคาขาย </label>
+                <input type="text" name="price_sell" placeholder="ราคาขาย"><br>
+                <label>ราคาพิเศษ </label>
+                <input type="text" name="price_net" placeholder="ราคาพิเศษ"><br>
+                <label>ข้อมูลเพิ่มเติม</label>
+                <input type="text" name="comment" placeholder="ข้อมูลเพิ่มเติม"><br>
+                <label>ผู้รับเข้า</label>
+                <select name="employee_id"><br>
+                    <?php
+                    $sql = "SELECT * FROM employee";
+                    $result = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option value='{$row['employee_id']}'>{$row['employee_name']}</option>";
+                    }
+                    ?>
         </select>
+                
+        </div>
+        <div class="right-col">
+            <h2>SPEC</h2>
+            <label>CPU : </label>
+            <input type="text" name="cpu" placeholder="cpu"><br>
+            <label>RAM : </label>
+            <input type="text" name="ram" placeholder="ram"><br>
+            <label>SSD1 :</label>
+            <input type="text" name="ssd1" ><br>
+            <label>SSD2 :</label>
+            <input type="text" name="ssd2" ><br>
+            <label>HDD :</label>
+            <input type="text" name="hdd" ><br>
+            <label>VGA :</label>
+            <input type="text" name="vga" ><br>
+            <label>DISPLAY :</label>
+            <input type="text" name="display" ><br>
+            <label>Adapter : </label>
+            <input type="text" name="adapter" ><br>
+            <label>ACC : </label>
+            <input type="text" name="acc" ><br>
+            <br>
+            <input type="submit" class="button button2" value="OK!" onclick="return confirm('คุณต้องการบันทึกข้อมูลนี้ใช่หรือไม่');">
+        
+        
+        </div>
         <br>
-        <label>วันหมดประกัน</label>
-        <input type="date" name="warranty"><br>
-        <label>แหล่งที่มา </label>
-        <select name="dealer_id"><br>
-            <?php
-            $sql = "SELECT * FROM dealer";
-            $result = mysqli_query($conn, $sql);
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<option value='{$row['dealer_id']}'>{$row['dealer_name']}</option>";
-            }
-            ?>
-        </select>
-        <br>
-        <h2>SPEC</h2>
-        <label>CPU : </label>
-        <input type="text" name="cpu" placeholder="cpu"><br>
-        <label>RAM : </label>
-        <input type="text" name="ram" placeholder="ram"><br>
-        <label>SSD1 :</label>
-        <input type="text" name="ssd1" ><br>
-        <label>SSD2 :</label>
-        <input type="text" name="ssd2" ><br>
-        <label>HDD :</label>
-        <input type="text" name="hdd" ><br>
-        <label>VGA :</label>
-        <input type="text" name="vga" ><br>
-        <label>DISPLAY :</label>
-        <input type="text" name="display" ><br>
-        <label>Adapter : </label>
-        <input type="text" name="adapter" ><br>
-        <label>ACC : </label>
-        <input type="text" name="acc" ><br>
-        <br>
-        <label>ราคารับเข้า</label>
-        <input type="text" name="price_buy" placeholder="ราคารับเข้า"><br>
-        <label>ราคาขาย </label>
-        <input type="text" name="price_sell" placeholder="ราคาขาย"><br>
-        <label>ราคาพิเศษ </label>
-        <input type="text" name="price_net" placeholder="ราคาพิเศษ"><br>
-        <label>ข้อมูลเพิ่มเติม</label>
-        <input type="text" name="comment" placeholder="ข้อมูลเพิ่มเติม"><br>
-        <label>ผู้รับเข้า</label>
-        <select name="employee_id"><br>
-            <?php
-            $sql = "SELECT * FROM employee";
-            $result = mysqli_query($conn, $sql);
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<option value='{$row['employee_id']}'>{$row['employee_name']}</option>";
-            }
-            ?>
-        </select>
-        <br>
-        <input type="submit" class="button button2" value="OK!" onclick="return confirm('คุณต้องการบันทึกข้อมูลนี้ใช่หรือไม่');">
+        
 
     </form>
+
+    </div>
 
 </body>
 
 </html>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $sku = $_POST["sku"];
+    $sku = filter_input(INPUT_POST,"sku",
+    FILTER_SANITIZE_NUMBER_INT);
     $brand = $_POST["brand"];
     $model = $_POST["model"];
     $serial = $_POST["serial"];
