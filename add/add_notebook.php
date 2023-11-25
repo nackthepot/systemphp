@@ -35,7 +35,7 @@
         </select>
         <br>
         <label>วันหมดประกัน</label>
-        <input type="date" name="warranty"><br>
+        <input type="date" name="warraty"><br>
         <label>แหล่งที่มา </label>
         <select name="dealer_id"><br>
             <?php
@@ -46,6 +46,26 @@
             }
             ?>
         </select>
+        <br>
+        <h2>SPEC</h2>
+        <label>CPU : </label>
+        <input type="text" name="cpu" placeholder="cpu"><br>
+        <label>RAM : </label>
+        <input type="text" name="ram" placeholder="ram"><br>
+        <label>SSD1 :</label>
+        <input type="text" name="ssd1" ><br>
+        <label>SSD2 :</label>
+        <input type="text" name="ssd2" ><br>
+        <label>HDD :</label>
+        <input type="text" name="hdd" ><br>
+        <label>VGA :</label>
+        <input type="text" name="vga" ><br>
+        <label>DISPLAY :</label>
+        <input type="text" name="display" ><br>
+        <label>Adapter : </label>
+        <input type="text" name="adapter" ><br>
+        <label>ACC : </label>
+        <input type="text" name="acc" ><br>
         <br>
         <label>ราคารับเข้า</label>
         <input type="text" name="price_buy" placeholder="ราคารับเข้า"><br>
@@ -81,13 +101,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $serial = $_POST["serial"];
     $date = $_POST["date"];
     $warranty_com_id = $_POST["warranty_com_id"];
-    $warranty = $_POST["warranty"];
+    $warraty = $_POST["warraty"];
     $dealer_id = $_POST["dealer_id"];
     $price_buy = $_POST["price_buy"];
     $price_sell = $_POST["price_sell"];
     $price_net = $_POST["price_net"];
     $comment = $_POST["comment"];
     $employee_id = $_POST["employee_id"];
+    $cpu = $_POST["cpu"];
+    $ram = $_POST["ram"];
+    $ssd1 = $_POST["ssd1"];
+    $ssd2 = $_POST["ssd2"];
+    $hdd = $_POST["hdd"];
+    $vga = $_POST["vga"];
+    $display = $_POST["display"];
+    $adapter = $_POST["adapter"];
+    $acc = $_POST["acc"];
+    
 
     if (empty($sku)) {
         echo "โปรดกรอก SKU";
@@ -108,11 +138,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "รหัสสินค้าซ้ำ";
             exit();
         } else {
-            $sql = "INSERT products (sku,brand,model,product_serial,product_date,warranty_com_id,warranty,dealer_id,price_buy,price_sell,price_net,comment,employee_id)
-                                                                    VALUES ('$sku','$brand','$model','$serial','$date','$warranty_com_id','$warranty','$dealer_id','$price_buy','$price_sell','$price_net','$comment','$employee_id')";
-        }
+            $sql = "INSERT products (sku,brand,model,product_serial,product_date,warranty_com_id,warraty,dealer_id,price_buy,price_sell,price_net,comment,employee_id)
+                    VALUES ('$sku','$brand','$model','$serial','$date','$warranty_com_id','$warraty','$dealer_id','$price_buy','$price_sell','$price_net','$comment','$employee_id')";
+            $sql2 = "INSERT spec_nb (sku,cpu,ram,ssd1,ssd2,hdd,vga,display,adapter,acc)
+                    VALUES ('$sku','$cpu','$ram','$ssd1','$ssd2','$hdd','$vga','$display','$adapter','$acc')";
+    }
 
         mysqli_query($conn, $sql);
+        mysqli_query($conn, $sql2);
         echo "เก็บเข้าระบบเรียบน้อย";
     }
 }
