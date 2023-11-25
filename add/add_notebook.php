@@ -35,7 +35,7 @@
         </select>
         <br>
         <label>วันหมดประกัน</label>
-        <input type="date" name="warraty"><br>
+        <input type="date" name="warranty"><br>
         <label>แหล่งที่มา </label>
         <select name="dealer_id"><br>
             <?php
@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $serial = $_POST["serial"];
     $date = $_POST["date"];
     $warranty_com_id = $_POST["warranty_com_id"];
-    $warraty = $_POST["warraty"];
+    $warranty = $_POST["warranty"];
     $dealer_id = $_POST["dealer_id"];
     $price_buy = $_POST["price_buy"];
     $price_sell = $_POST["price_sell"];
@@ -138,9 +138,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "รหัสสินค้าซ้ำ";
             exit();
         } else {
-            $sql = "INSERT products (sku,brand,model,product_serial,product_date,warranty_com_id,warraty,dealer_id,price_buy,price_sell,price_net,comment,employee_id)
-                    VALUES ('$sku','$brand','$model','$serial','$date','$warranty_com_id','$warraty','$dealer_id','$price_buy','$price_sell','$price_net','$comment','$employee_id')";
-            $sql2 = "INSERT spec_nb (sku,cpu,ram,ssd1,ssd2,hdd,vga,display,adapter,acc)
+            $sql = "INSERT INTO products(sku,brand,model,product_serial,product_date,warranty_com_id,warranty,dealer_id,price_buy,price_sell,price_net,comment,employee_id)
+                    VALUES ('$sku','$brand','$model','$serial','$date','$warranty_com_id','$warranty','$dealer_id','$price_buy','$price_sell','$price_net','$comment','$employee_id')";
+            $sql2 = "INSERT INTO spec_nb (sku,cpu,ram,ssd1,ssd2,hdd,vga,display,adapter,acc)
                     VALUES ('$sku','$cpu','$ram','$ssd1','$ssd2','$hdd','$vga','$display','$adapter','$acc')";
     }
 
