@@ -4,13 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Kanit:ital,wght@1,100&family=Noto+Sans+Thai:wght@200;500;900&family=Playfair+Display:wght@400;500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rammetto+One&display=swap" rel="stylesheet">
   <style>
     /* Navbar container */
+    body{
+      font-family: Noto Sans Thai;
+    }
+
     .navbar {
       overflow: hidden;
       background-color: #333;
-      font-family: Arial;
+      font-family: Noto Sans Thai;
     }
 
     /* Links inside the navbar */
@@ -84,13 +90,14 @@
       /* Green */
       border: none;
       color: white;
-      padding: 15px 32px;
+      width : 120px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 16px;
+      font-size: 13px;
       margin: 4px 2px;
       cursor: pointer;
+      padding: 5px 2px;
     }
 
     .button2 {
@@ -124,24 +131,90 @@
       margin: 7px 0px;
     }
 
-    table {
-  border: 1px solid black;
-}
-th {
-  color: white;
-  padding: 20px;
-  background-color: blue;
-  border: 1px solid black;
-}
-td {
-  width: 300px;
-  border: 1px solid black;
-  height: 40px;
-}
-tr {
-    
-}
-  </style>
+
+      .customers {
+      font-family: Noto Sans Thai;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+      .customers td, .customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      .customers tr:nth-child(even){background-color: #f2f2f2;}
+
+      .customers tr:hover {background-color: #ddd;}
+
+      .customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+      }
+      th, td {
+        padding: 8px;
+        text-align: left;
+      }
+
+      td{
+        font-size: 12px;
+      }
+
+      input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+      input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type=date] {
+        width: 30%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+
+      .add_main{
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        display: flex;
+        
+      }
+
+      .left-col{
+        width: 50%;
+      }
+      .right-col{
+        width: 50%;
+        padding-left: 20px;
+      }
+        </style>
 
 </head>
 
@@ -186,7 +259,9 @@ tr {
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="/result/products.php">ข้อมูลสินค้า</a>
+        <a href="/result/products.php">ข้อมูลสินค้าทั่วไป</a>
+        <a href="/result/products_monitor.php">ข้อมูลสินค้า Monitor</a>
+        <a href="/result/products_notebook.php">ข้อมูลสินค้า Notebook</a>
         <a href="/result/customer.php">ข้อมูลลูกค้า</a>
         <a href="/result/stockplace.php">ข้อมูลที่จัดเก็บ</a>
       </div>
