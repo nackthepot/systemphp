@@ -123,6 +123,24 @@
       background-color: #f1f1f1;
       margin: 7px 0px;
     }
+
+    table {
+  border: 1px solid black;
+}
+th {
+  color: white;
+  padding: 20px;
+  background-color: blue;
+  border: 1px solid black;
+}
+td {
+  width: 300px;
+  border: 1px solid black;
+  height: 40px;
+}
+tr {
+    
+}
   </style>
 
 </head>
